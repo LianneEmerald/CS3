@@ -1,0 +1,39 @@
+body{
+	background-image: url("image.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+h1 {
+	border: center;
+	text-align: center;
+	background-color: #A8DADC;
+	font-family: Serif;
+	border-style: dotted;
+	border-color: blue;
+	border-width: 2px;
+	padding: 10px 15px;
+	width: 250px;
+	margin-bottom: 20px;
+}
+p {
+	border: center;
+	text-align: center;
+	background-color: hsl(203, 39%, 44%);
+	font-style: italic;
+	padding: 20px;
+	border: 3px;
+	border-color: black;
+	border-top-style: dotted;
+	border-bottom-style: dashed;
+	border-left-style: solid;
+	border-right-style: double;
+	width: 500px;
+}
+span {
+	font-weight: bold;
+	font-style: italic;
+	color: rgb(29, 53, 87);
+	margin-left: 2px;
+	margin-right: 5px;
+}
