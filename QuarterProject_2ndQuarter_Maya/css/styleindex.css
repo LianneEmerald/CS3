@@ -9,6 +9,8 @@ nav {
 	color: #FFFFFF;
 	font-family: Garamond;
 	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 section {
 	width: 30%;
