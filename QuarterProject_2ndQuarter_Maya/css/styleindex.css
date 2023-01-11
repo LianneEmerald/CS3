@@ -1,0 +1,90 @@
+section {
+	width: 30%;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-bottom: 25px;
+	float: left;
+	margin: 20px;
+}
+section {
+	animation: scaledown 0.4s linear;
+	animation-fill-mode: forwards;
+}
+section:hover:{
+	z-index:100;
+	animation: scale .04s linear;
+	animation-fill-mode: forwards;
+}
+@keyframes scaledown {
+	0%{
+		-webkit-transform: scale(1.1)
+		transform: scale(1.1)
+	}
+	100%{
+		-webkit-transform: scale(1.0)
+		transform: scale(1.0)
+	}
+}
+@keyframes scale {
+	0%{
+		-webkit-transform: scale(1)
+		transform: scale(1)
+	}
+	100%{
+		-webkit-transform: scale(1.1)
+		transform: scale(1.1)
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+	}
+}
+container {
+	text-align: center;
+	padding: 10px 10px;
+}
+
+header{
+	width: 100%;
+  	background: #e9edc9;
+}
+
+nav {
+	overflow: hidden;
+	width: 80%;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+nav a {
+	float: left;
+  	color: black;
+	justify-content: center;
+	align-items: center;
+  	text-decoration: none;
+  	font-size: 17px;
+  	margin: 0 65px 0 65px;
+}
+
+nav a:hover {
+  background-color: #6b705c;
+  color: white;
+}
+
+nav a.active {
+  background-color: #6b705c;
+  color: white;
+}
+
+header h1{
+	text-align: center;
+	color: white;
+	background: #ccd5ae;
+	width: 100%;
+	font-size: 40px;
+}
+p {
+	text-align: center;
+}
+aside {
+	width: 400px;
+	padding: 30px;
+	border: 3px solid #a5a58d;
+}
