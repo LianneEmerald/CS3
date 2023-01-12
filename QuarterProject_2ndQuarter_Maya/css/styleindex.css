@@ -5,16 +5,9 @@ section {
 	margin-bottom: 25px;
 	float: left;
 	margin: 20px;
-	transition: transform 150ms ease-in-out;
-}
-section {
-	animation: scaledown 0.4s linear;
-	animation-fill-mode: forwards;
 }
 section:hover:{
-	z-index:100;
-	animation: scale .04s linear;
-	animation-fill-mode: forwards;
+	transition: transform 150ms ease-in-out;
 } 
 container {
 	text-align: center;
