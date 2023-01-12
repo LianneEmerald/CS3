@@ -5,6 +5,7 @@ section {
 	margin-bottom: 25px;
 	float: left;
 	margin: 20px;
+	transition: transform 150ms ease-in-out;
 }
 section {
 	animation: scaledown 0.4s linear;
