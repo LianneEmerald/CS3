@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Determine Triangle Type</title>
+  </head>
+  <body>
+    <script>
+        function determineTriangle(a, b, c) {
+  if (a == b && b == c) {
+    alert("The triangle is EQUILATERAL.");
+  } else if (a == b || a == c || b == c) {
+    alert("The triangle is ISOSCELES.");
+  } else {
+    alert("The triangle is SCALENE.");
+  }
+}
+
+let side1 = prompt("Enter the length of side 1:");
+let side2 = prompt("Enter the length of side 2:");
+let side3 = prompt("Enter the length of side 3:");
+
+determineTriangle(side1, side2, side3);
+
+    </script>
+  </body>
+</html>
