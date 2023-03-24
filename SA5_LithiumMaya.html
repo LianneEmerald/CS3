@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Flower Shop</title>
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1> Welcome to Flower Shop </h1>
+	<h2> Please select from the following items </h2>
+	<ol>
+		<li> Red Rose price: 100.00 </li>
+		<li> Pink Rose price: 150.00 </li>
+		<li> White Rose price: 200.00 </li>
+	</ol>
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill <span id="tbill"> </span> </p>
+	<button id="buyButton"> Buy an Item </button>
+	<button id="clearButton"> Clear </button>
+    
+    <script>
+var items = [
+  {id: 1, name: "Red Rose", price: 100.00},
+  {id: 2, name: "Pink Rose", price: 150.00},
+  {id: 3, name: "White Rose", price: 200.00}
+];
+
+function buyItem() {
+  var itemId = prompt("Enter Rose Number to buy (1-3):");
+  var qty = prompt("Enter Qty to buy:");
+  var item = items.find(item => item.id == itemId);
+  if (item) {
+    if (Number.isInteger(Number(qty))) {
+      var qtyBought = parseInt(qty);
+      var total = qtyBought * item.price;
+      document.getElementById("item").innerHTML = item.name;
+      document.getElementById("qty").innerHTML = qtyBought;
+      document.getElementById("bill").innerHTML = total.toFixed (2);
+      document.getElementById("tbill").innerHTML = total.toFixed(2);
+    } else {
+      alert("Invalid quantity entered. Please enter a valid integer value.");
+    }
+  } else {
+    alert("Invalid item# entered. Please enter a valid item# (1-3).");
+  }
+}
+
+function clearAll() {
+  document.getElementById("item").innerHTML = "";
+  document.getElementById("qty").innerHTML = "";
+  document.getElementById("bill").innerHTML = "";
+  document.getElementById("tbill").innerHTML = 0;
+}
+
+document.getElementById("buyButton").addEventListener("click", buyItem);
+document.getElementById("clearButton").addEventListener("click", clearAll);
+</script>
+
+</body>
+</html>
