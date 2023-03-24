@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+	</head>
+	<body onload="generateOTP()">
+		<h1>Final Verification Step</h1>
+		<h2>Current OTP: <span id="otp"> _ _ _ _ _ _ </span><a href="#" onclick="generateOTP()"> New OTP </a></h2>
+		<button onclick="validateOTP()">Enter the OTP as shown above</button>
+		<script>
+			function generateOTP() {
+				var otp = "";
+				var possible = "0123456789";
+				for (var i = 0; i < 6; i++) {
+					otp += possible.charAt(Math.floor(Math.random() * possible.length));
+				}
+				document.getElementById("otp").innerHTML = otp;
+			}
+
+			function validateOTP() {
+				var enteredOTP = prompt("Please enter the OTP as shown on screen");
+				var currentOTP = document.getElementById("otp").innerHTML;
+				if (enteredOTP == currentOTP) {
+					window.open("https://www.wattpad.com/");
+				} else {
+					alert("You have entered the incorrect OTP. Please try again.");
+					generateOTP();
+				}
+			}
+		</script>
+	</body>
+</html>
