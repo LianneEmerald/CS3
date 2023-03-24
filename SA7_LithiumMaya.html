@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button> Click here to enter your name </button>
+	<script>
+		function getUserInfo() {
+			var name = prompt("Enter Name: ", " ");
+			document.getElementById("thename").innerHTML = name;
+			var length = name.length;
+			var singleDigit = 0;
+			while (length > 0) {
+				singleDigit += length % 10;
+				length = Math.floor(length / 10);
+			}
+			while (singleDigit > 9) {
+				var digitSum = 0;
+				while (singleDigit > 0) {
+					digitSum += singleDigit % 10;
+					singleDigit = Math.floor(singleDigit / 10);
+				}
+				singleDigit = digitSum;
+			}
+			var fortune = "";
+			switch (singleDigit) {
+				case 0:
+					fortune = "You will be loved by everyone";
+					break;
+				case 1:
+					fortune = "You are very talented in many ways.";
+					break;
+				case 2:
+					fortune = "Love can last a lifetime, if you want it to.";
+					break;
+				case 3:
+					fortune = "What you seek lies in front of you";
+					break;
+				case 4:
+					fortune = "Everyone agrees. You are the best.";
+					break;
+				case 5:
+					fortune = "Keep your eye out for someone special.";
+					break;
+				case 6:
+					fortune = "It's better to be alone sometimes.";
+					break;
+				case 7:
+					fortune = "You learn from your mistakes.";
+					break;
+				case 8:
+					fortune = "When you're alone, work on yourself.";
+					break;
+				case 9:
+					fortune = "Fortune favors the brave.";
+					break;
+				default:
+					fortune = "Stand by what you belive is right.";
+			}
+			document.getElementById("fortune").innerHTML = fortune;
+		}
+
+		document.querySelector("button").addEventListener("click", getUserInfo);
+	</script>
+</body>
+</html>
