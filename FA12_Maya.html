@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Multiplication Table Generator</title>
+	<style>
+		table, td {
+			border: 1px solid black;
+			font-size: 20px;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<p>[enter a number between 2-10]</p>
+	<br>
+	<input type="text" id="rowValue">
+	<label for="columnValue"> by </label>
+	<input type="text" id="columnValue">
+	<br>
+	<br>
+	<button onclick="generateTable()"> Click here when ready! </button>
+		<div id="output"></div>
+		
+		<script>
+			function generateTable() {
+				
+				var rowValue = parseInt(document.getElementById("rowValue").value);
+				var columnValue = parseInt(document.getElementById("columnValue").value);
+
+			if (isNaN(rowValue) || isNaN(columnValue) || rowValue < 2 || columnValue > 10 || rowValue > 10 || columnValue < 2) {
+				alert("Please enter numbers between 2 and 10");
+				return;
+			}
+
+			var table = "<table>";
+			for (var i = 1; i <= rowValue; i++) {
+				table += "<tr>";
+				for (var j = 1; j <= columnValue; j++) {
+					table += "<td>" + (j * i) + "</td>";
+				}
+				table += "</tr>";
+			}
+			table += "</table>";
+
+			document.getElementById("output").innerHTML = table;
+		}
+	</script>
+</body>
+</html>
+
