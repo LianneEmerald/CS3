@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #333;
+        }
+        #signup {
+            width: 98%;
+            float: left;
+            margin-right: 2%;
+            background-color: #F6D0C8;
+            border: 1px solid #d3b2ab;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        fieldset {
+            width: 98%;
+            border: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+        label {
+            font-size: 15px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select,
+        textarea {
+            border: 2px solid #18A558;
+            outline: none;
+        }
+        #submit,
+        #reset {
+            background-color: #FBC4AB;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #submit:hover,
+        #reset:hover {
+            background-color: #F8AD9D;
+        }
+        #output {
+            width: 98%;
+            background: #E7C6BF;
+            border-radius: 10px;
+            border: 1px solid #d3b2ab;
+            text-align: center;
+            color: white;
+            float: left;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="signup">
+        <fieldset>
+            <label for="name">Name:</label><br>
+            <input id="name" type="text" name="name" onblur="blurFunction(this)" onfocus="focus(this)"><br>
+            <label for="username">Username:</label><br>
+            <input id="username" type="text" name="username" onblur="blurFunction(this)" onfocus="focus(this)"><br>
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender"><br>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="prefer not to mention">Prefer not to mention</option>
+            </select><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" onblur="blurFunction(this)" onfocus="focus(this)"><br>
+            <label for="email">Email Address:</label><br>
+            <input id="email" type="email" name="email" onblur="blurFunction(this)" onfocus="focus(this)"><br>
+            <label for="add">Address:</label><br>
+            <input id="add" type="text" name="add" onblur="blurFunction(this)" onfocus="focus(this)"><br>
+            <label for="int">A paragraph about your interests:</label><br>
+            <textarea id="int" name="int" onblur="blurFunction(this)" onfocus="focus(this)"></textarea><br>
+            <input type="submit" onclick="displayOutput()" value="Submit" id="submit"><br>
+            <input type="reset" onclick="reset()" value="Reset" id="reset"><br>
+        </fieldset>
+    </div>
+    <p id = "output"></p>
+    <script>
+        function displayOutput(){
+            const output = document.getElementById("output");
+            const name = document.getElementById("name").value;
+            const username = document.getElementById("username").value;
+            const gender = document.getElementById("gender").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+            const add = document.getElementById("add").value;
+            const int = document.getElementById("int").value;
+            output.innerHTML = "Name: " + name + "<br />" + "Username: " + username + "<br />" + "Gender: " + gender + "<br />" +  
+            "Password: " + password + "<br />" + "Email: " + email + "<br />" + "Address: " + add + "<br />" + "Interests: " + int + "<br />";
+        }
+        function reset(){
+            document.getElementById("output").innerHTML = " ";
+        }
+        function blurFunction(input){
+            if (input.value == ""){
+                input.style.borderColor = "red";
+                input.style.borderWidth = "medium";
+            }
+        }
+        function focus(input){
+            if(input.value != " "){
+                input.style.borderColor = "green";
+                input.style.borderWidth = "medium";
+            }
+        }
+    </script>
+</body>
+</html>
